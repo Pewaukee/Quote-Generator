@@ -29,15 +29,17 @@ Input and Generate Quotes: Follow the instructions provided by the application t
 ## Configuration
 The Quote Generation project requires configuration settings to connect to the OpenAI API. Update the configuration file config.py with your OpenAI API key or set the API key as an environment variable named OPENAI_API_KEY.
 
-```# config.py
+```
+# config.py
 
-OPENAI_API_KEY = 'your-api-key'
+OPENAI_API_KEY = 'your-api-key' # or os.getenv('OPEN_API_KEY')
 ```
 
 ## Customization
 The quote generation process can be customized based on your preferences. Modify the settings in the quote_generator.py file to adjust the quote length, style, or any other relevant parameters.
 
-```# quote_generator.py
+```
+# quote_generator.py
 
 quote_length = 20  # Adjust the desired length of the generated quote
 quote_style = 'inspirational'  # Customize the style of the quote (e.g., inspirational, motivational, humorous)
