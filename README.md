@@ -18,7 +18,7 @@ To get started with the Quote Generation project, follow these steps:
 
 1. Clone the Repository: Clone this repository to your local machine using the following command:
 
-`git clone https://github.com/your-username/quote-generation.git`
+`git clone https://github.com/pewaukee/quote-generation.git`
 
 Configuration: Set up your OpenAI API credentials. Create an account at https://www.openai.com and obtain an API key. Set the API key as an environment variable or update the configuration file with the required credentials.
 
@@ -31,7 +31,8 @@ The Quote Generation project requires configuration settings to connect to the O
 
 ```# config.py
 
-OPENAI_API_KEY = 'your-api-key'```
+OPENAI_API_KEY = 'your-api-key'
+```
 
 ## Customization
 The quote generation process can be customized based on your preferences. Modify the settings in the quote_generator.py file to adjust the quote length, style, or any other relevant parameters.
@@ -39,7 +40,8 @@ The quote generation process can be customized based on your preferences. Modify
 ```# quote_generator.py
 
 quote_length = 20  # Adjust the desired length of the generated quote
-quote_style = 'inspirational'  # Customize the style of the quote (e.g., inspirational, motivational, humorous)```
+quote_style = 'inspirational'  # Customize the style of the quote (e.g., inspirational, motivational, humorous)
+```
 
 Feel free to experiment and fine-tune these parameters to achieve the desired results.
 
