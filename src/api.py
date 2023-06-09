@@ -1,6 +1,7 @@
 # define the functions and classes for the api
 
 import openai
+import tiktoken
 import os
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -34,7 +35,21 @@ class API: # class for functionality of the api
         response_text = response['choices'][0]['message']['content']
         self.add_message("assistant", response_text)
         return response_text
-    
+    def count_tokens(self) -> int:
+        encoding = tiktoken.encoding_for_model(self.model)
+        # only based on the gpt-3.5-turbo
+        tokens_per_message = 4
+        tokens_per_name = -1
+        
+        num_tokens = 0
+        for message in self.messages:
+            num_tokens += tokens_per_message
+            for key, value in message.items():
+                num_tokens += len(encoding.encode(value))
+            if key == "name":
+                num_tokens += tokens_per_name
+        num_tokens += 3  # every reply is primed with <|start|>assistant<|message|>
+        return num_tokens
             
 
     
