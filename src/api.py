@@ -23,9 +23,9 @@ class API: # class for functionality of the api
             max_tokens=max_tokens,
         )
         # add the prompt to the messages list
-        res = response['choices'][0]['message']['content']
-        self.add_message("assistant", res)
-        return res
+        response_text = response['choices'][0]['message']['content']
+        self.add_message("assistant", response_text)
+        return response_text
     
             
 
