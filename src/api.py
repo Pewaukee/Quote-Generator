@@ -47,4 +47,7 @@ class API: # class for functionality of the api
         return num_tokens
             
 
-    
+    def cleanup(self) -> None:
+        # save the messages to ../docs/messages.txt
+        with open('../data/messages.txt', 'w') as file:
+            json.dump(self.messages, file)
