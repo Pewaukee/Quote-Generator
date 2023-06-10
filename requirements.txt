@@ -1,5 +1,4 @@
 # versions used for this project
-python==3.10
 openai==0.27.7
 tiktoken==0.4.0
 python-dotenv==1.0.0

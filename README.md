@@ -1,5 +1,5 @@
 # Quote Generation
-The Quote Generation project is a Python-based application that leverages the power of OpenAI to generate insightful and inspiring quotes. This project allows users to input different topics or themes and receive dynamically generated quotes related to their input.
+The Quote Generation project is a Python-based application that leverages the power of OpenAI to generate different types of quotes. This project allows users to input different topics or themes and receive dynamically generated quotes related to their input.
 
 ## Features
 * Quote Generation: Enter a topic or theme, and the application will generate a unique and meaningful quote related to that input.
@@ -10,8 +10,8 @@ The Quote Generation project is a Python-based application that leverages the po
 ## Prerequisites
 Before using the Quote Generation project, ensure that the following dependencies are installed:
 
-* Python 3.x: Install Python by visiting the official Python website: https://www.python.org
-* OpenAI Python Library: Install the OpenAI Python library by running the command pip install openai
+* Install Python's latest version from: https://www.python.org/downloads/release/python-3114/
+* Run `pip install -r requirements.txt` to install the dependencies required.
 
 ## Getting Started
 To get started with the Quote Generation project, follow these steps:
@@ -20,9 +20,9 @@ To get started with the Quote Generation project, follow these steps:
 
 `git clone https://github.com/pewaukee/quote-generation.git`
 
-Configuration: Set up your OpenAI API credentials. Create an account at https://www.openai.com and obtain an API key. Set the API key as an environment variable or update the configuration file with the required credentials.
+Configuration: Set up your OpenAI API credentials. Create an account at https://www.openai.com and obtain an API key. Set the API key as an environment variable which will be used in `/src/api.py`.
 
-Run the Application: Execute the Python script quote_generator.py to launch the quote generation application. Ensure that the necessary dependencies are installed and accessible.
+Run the Application: Execute the Python script `/src/main.py` to launch the quote generation application. Ensure that the necessary dependencies are installed and accessible.
 
 Input and Generate Quotes: Follow the instructions provided by the application to input your desired topic or theme. The application will generate a quote based on your input and display it on the command line.
 
@@ -30,22 +30,11 @@ Input and Generate Quotes: Follow the instructions provided by the application t
 The Quote Generation project requires configuration settings to connect to the OpenAI API. Update the configuration file config.py with your OpenAI API key or set the API key as an environment variable named OPENAI_API_KEY.
 
 ```
-# config.py
-
 OPENAI_API_KEY = 'your-api-key' # or os.getenv('OPEN_API_KEY')
 ```
 
 ## Customization
-The quote generation process can be customized based on your preferences. Modify the settings in the quote_generator.py file to adjust the quote length, style, or any other relevant parameters.
-
-```
-# quote_generator.py
-
-quote_length = 20  # Adjust the desired length of the generated quote
-quote_style = 'inspirational'  # Customize the style of the quote (e.g., inspirational, motivational, humorous)
-```
-
-Feel free to experiment and fine-tune these parameters to achieve the desired results.
+The quote generation process can be customized based on your preferences. Your output quotes will be based on initial fed system data but also customized by the messages you send in. Further customization can be achieved by directly modifying `/data/messages.txt`.
 
 ### Acknowledgements
-The Quote Generation project utilizes the OpenAI platform to generate quotes. Powerful language models are the backbone of this application!
+The Quote Generation project utilizes the OpenAI platform to generate quotes. Powerful language models are the backbone of this application! Feel free to check out this API and others at: https://openai.com/blog/chatgpt-plugins
