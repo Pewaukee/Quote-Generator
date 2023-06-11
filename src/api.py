@@ -10,13 +10,15 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 class API: # class for functionality of the api 
     def __init__(self, model:str) -> None:
         self.model = model
-        # create the message list with system messages from ../docs/messages.txt
-        with open('../data/messages.txt', 'r') as file:
+        # create the message list with system messages from data/messages.json
+        with open('data/messages.json', 'r') as file:
             json_data = file.read()
         self.messages = json.loads(json_data)
+
     def add_message(self, role:str, content:str) -> None:
         # add a message to the message list
         self.messages.append({"role": role, "content": content})
+
     def generate_response(self, prompt:str, max_tokens:int=300, temperature:float=1.0) -> str: # temp 1.5 to be more creative
         # generate a OpenAI response from the prompt and update the corresponding variables
         response = openai.ChatCompletion.create(
@@ -33,6 +35,7 @@ class API: # class for functionality of the api
         self.add_message("assistant", response_text)
         
         return response_text
+    
     def count_tokens(self) -> int:
         encoding = tiktoken.encoding_for_model(self.model)
         # only based on the gpt-3.5-turbo
@@ -48,9 +51,8 @@ class API: # class for functionality of the api
                 num_tokens += tokens_per_name
         num_tokens += 3  # every reply is primed with <|start|>assistant<|message|>
         return num_tokens
-            
 
     def cleanup(self) -> None:
-        # save the messages to ../docs/messages.txt
-        with open('../data/messages.txt', 'w') as file:
+        # save the messages to data/output.json
+        with open('data/output.json', 'w') as file:
             json.dump(self.messages, file, indent=4)

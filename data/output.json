@@ -49,7 +49,7 @@
     },
     {
         "role": "assistant",
-        "content": "\"Love has nothing to do with what you are expecting to get\u00e2\u20ac\u201conly with what you are expecting to give\u00e2\u20ac\u201cwhich is everything.\" - Katharine Hepburn"
+        "content": "\"Love has nothing to do with what you are expecting to get only with what you are expecting to give which is everything.\" - Katharine Hepburn"
     },
     {
         "role": "user",
@@ -61,18 +61,10 @@
     },
     {
         "role": "user",
-        "content": "Generate a quote about violence inspired by Arnold Schwgazger.\n"
+        "content": "Generate a quote about cooking inspired by arnold schwartzenager.\n"
     },
     {
         "role": "assistant",
-        "content": "I'm sorry, but there is no known author or celebrity named \"Arnold Schwgazger.\" Could you please check your spelling and try again with the correct name or provide an alternate source for inspiration?"
-    },
-    {
-        "role": "user",
-        "content": "Generate a quote about violence inspired by Arnold Schwgazger.\n"
-    },
-    {
-        "role": "assistant",
-        "content": "To provide a default quote about violence, here is a quote from revered peace activist, Mahatma Gandhi:\n\n\"An eye for an eye will only make the whole world blind.\""
+        "content": "Give me a quote about violence in the style of Arnold Schwarzenegger."
     }
 ]
