@@ -18,7 +18,6 @@ class API: # class for functionality of the api
         # add a message to the message list
         self.messages.append({"role": role, "content": content})
     def generate_response(self, prompt:str, max_tokens:int=300, temperature:float=1.0) -> str: # temp 1.5 to be more creative
-        self.add_message("user", prompt)
         # generate a OpenAI response from the prompt and update the corresponding variables
         response = openai.ChatCompletion.create(
             model=self.model,
@@ -28,7 +27,11 @@ class API: # class for functionality of the api
         )
         # add the prompt to the messages list
         response_text = response['choices'][0]['message']['content']
+        
+        # add the respective strings to their respective lists
+        self.add_message("user", prompt)
         self.add_message("assistant", response_text)
+        
         return response_text
     def count_tokens(self) -> int:
         encoding = tiktoken.encoding_for_model(self.model)
@@ -50,4 +53,4 @@ class API: # class for functionality of the api
     def cleanup(self) -> None:
         # save the messages to ../docs/messages.txt
         with open('../data/messages.txt', 'w') as file:
-            json.dump(self.messages, file)
+            json.dump(self.messages, file, indent=4)
